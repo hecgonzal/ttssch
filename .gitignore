@@ -1,0 +1,54 @@
+# Android Studio and IntelliJ
+*.iml
+.idea/
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Gradle and build
+.gradle/
+gradle/
+gradle-wrapper.jar
+gradle-wrapper.properties
+build/
+**/build/
+
+# Local and machine specific
+local.properties
+/local.properties
+
+# Android artifacts and native build
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+
+# Keystores and signing
+*.jks
+*.keystore
+
+# Python
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+requirements.txt
+
+# Node and other package managers
+node_modules/
+
+# macOS and misc
+.DS_Store
+*.log
+*.tmp
+*.bak
+
+# IDE and OS files
+*.class
+*.swp
