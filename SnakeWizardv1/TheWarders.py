@@ -18,7 +18,8 @@ class DebugMessages:
             8: "[{timestamp}][Task Data Error] Duplicate Task ID detected: {}",
             9: "[{timestamp}][Task Data Error] Task date cannot be in the past: {}",
             10: "[{timestamp}][Task Data Error] Unknown validation error: {}",
-            11: "[{timestamp}][Task Data Error] Task creation failed due to multiple invalid fields."
+            11: "[{timestamp}][Task Data Error] Task creation failed due to multiple invalid fields.",
+            12: "[{timestamp}][Task Data Error] Task Tags must be a list of strings. Provided: {}"
         }
 
         self.JSONHandler_errors_outstring = {

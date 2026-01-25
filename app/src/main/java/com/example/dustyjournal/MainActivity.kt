@@ -4,47 +4,26 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.dustyjournal.ui.theme.DustyJournalTheme
+import androidx.activity.viewModels
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import com.example.dustyjournal.Screens.QuestLogScreen
-
-
-
+import com.example.dustyjournal.screens.QuestLogScreen
+import com.example.dustyjournal.viewmodel.TaskViewModel
 
 class MainActivity : ComponentActivity() {
+
+    private val viewModel: TaskViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // Trigger API load on launch
+        viewModel.loadTasks()
+
         setContent {
             MaterialTheme {
-                    Surface {
-                        QuestLogScreen()
-                }
+                QuestLogScreen(viewModel)
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    DustyJournalTheme {
-        Greeting("Android")
     }
 }
